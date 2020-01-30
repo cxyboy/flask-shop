@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='home/css/mr-01.css')}}" type="text/css">
+<script src="{{url_for('static',filename='home/js/jsArr01.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static',filename='home/js/module.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static',filename='home/js/jsArr02.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static',filename='home/js/tab.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static',filename='home/js/send_email.js')}}" type="text/javascript"></script>
+</head>
+<body>
+<div id="mr-mainbody" class="container mr-mainbody">
+		<div class="row">
+			<div id="mr-content" class="mr-content col-xs-12">
+				<div class="login-wrap"
+					style="margin-bottom: 60px; margin-top: 50px">
+					<div class="login">
+						<div class="page-header" style="pause: 0px;">
+							<h1 class="login_h1">更改密码</h1>
+						</div>
+						<!-- 会员更改密码表单 -->
+					<form  action="" method="post" class="form-horizontal">
+							<fieldset>
+								<div class="form-group">
+									<div class="col-sm-4 control-label">
+										{{form.email.label}}
+									</div>
+									<div class="col-sm-8">
+										{{form.email}}
+										{% for err in form.email.errors %}
+										<span class="error">{{err}}</span>
+										{%endfor%}
+										<div class="col-sm-offset-4 col-sm-8">
+										</div>
+
+									</div>
+								</div>
+
+
+								<div class="form-group">
+									<div class="col-sm-offset-4 col-sm-8">
+										{{ form.csrf_token }}
+										{{ form.submit }}
+									</div>
+								</div>
+								<div class="form-group">
+<!--									style="border-top: 1px solid #D9D9D9; margin: 20px;">-->
+									<span style="float: right; color: #858585; margin-right: 40px; margin-top: 10px; font-size: 14px;">
+										<a href="{{url_for('home.login')}}">返回登录</a>
+									</span>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
